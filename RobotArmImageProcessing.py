@@ -5,7 +5,7 @@ import imageio
 import cv2
 import loader as do
 plt.ion()
-scanpath ='./dataset'
+scanpath ='./datasetX'
 scannum = 136
 
 
