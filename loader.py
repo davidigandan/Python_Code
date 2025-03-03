@@ -56,7 +56,7 @@ def load(filename):
                 meta[vals[0]] = eval( vals[1] )
             except:
                 meta[vals[0]] = vals[1]
-    
+
     
     # Read Main data
     # previous loop ended at &END, now starting on list of names
@@ -72,6 +72,3 @@ def load(filename):
     d = dict2obj(main, order=names)
     d.metadata = dict2obj(meta)
     return d
-    
-    
-

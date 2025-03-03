@@ -2,11 +2,10 @@ import inspect, os, sys, subprocess
 import matplotlib.pyplot as plt
 import numpy as np
 import imageio
-import cv2
 import loader as do
 plt.ion()
-scanpath ='./datasetX'
-scannum = 136
+scanpath ='./datasetX/'
+scannum = 599
 
 
 imtemplate=str(scannum)+'-camlab84-files/%05d.tif'
