@@ -1,10 +1,10 @@
-##### Based on Dan Porters code 15 July 2019  ########
+##### Based on Dan Porters code 15 July 2019 #####
 import numpy as np
 from collections import OrderedDict
 class dict2obj(OrderedDict):
     "Convert dictionary object to class instance"
     def __init__(self,dictvals,order=None):
-        # Initialise OrderedDict (not sure which of these is correct)
+        # Initialise OrderedDict (not sure whih of these is correct)
         super(dict2obj, self).__init__()
         #OrderedDict.__init__(self)
         
@@ -18,11 +18,11 @@ class dict2obj(OrderedDict):
 
 def load(filename):
     """
-    Reads #####.dat files from instrument, returns class instance containing all data
-    Input: 
-      filename = string filename of data file
+    Reads .dat files from instrument, returns class instance containing all data
+    Input:
+        filename = string filename of data file
     Output:
-      d = class instance with parameters associated to scanned values in the data file, plus:
+        d = class instance with parameters associated to scanned values in the data file, plus:
          d.metadata - class containing all metadata from datafile
          d.keys() - returns all parameter names
          d.values() - returns all parameter values
@@ -57,12 +57,13 @@ def load(filename):
             except:
                 meta[vals[0]] = vals[1]
 
-    
+
     # Read Main data
     # previous loop ended at &END, now starting on list of names
     names = lines[lineno].split()
     # Load 2D arrays of scanned values
-    vals = np.loadtxt(lines[lineno+1:],ndmin=2)
+    vals = np.genfromtxt(lines[lineno+1:],ndmin=2)
+    print("vals are: ",vals)
     # Assign arrays to a dictionary
     main = OrderedDict()
     for name,value in zip(names,vals.T):

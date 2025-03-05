@@ -37,7 +37,7 @@ xzyz = [0,0,0,0]
 aa = [0,0,0,0]
 imtemplate=str(scannum)+'-camlab84-files/%05d.tif'# cam1
 imtemplate2=str(scannum)+'-camlab84b-files/%05d.tif'# cam1
-for scannum in list(range(136,136+24,1)):
+for scannum in list(range(599,599+30,1)):
     d = do.load(scanpath + str(scannum) + '.dat')
     centres = np.array([[]]*17).T
     for imnum in d.path[list(range(0,d.path.shape[0],1))]:
