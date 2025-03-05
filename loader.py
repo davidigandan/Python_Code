@@ -52,23 +52,27 @@ def load(filename):
         
         for inln in inlines:
             vals = inln.split('=')
+
+            # print("vals0 ", vals[0],"\nvals1 ", vals[1])
             try:
                 meta[vals[0]] = eval( vals[1] )
             except:
                 meta[vals[0]] = vals[1]
 
-
+    
     # Read Main data
     # previous loop ended at &END, now starting on list of names
     names = lines[lineno].split()
+    
     # Load 2D arrays of scanned values
     vals = np.genfromtxt(lines[lineno+1:],ndmin=2)
-    print("vals are: ",vals)
+    # print("vals are: ",vals)
     # Assign arrays to a dictionary
     main = OrderedDict()
     for name,value in zip(names,vals.T):
         main[name] = value
     
+    print(main)
     # Convert to class instance
     d = dict2obj(main, order=names)
     d.metadata = dict2obj(meta)
