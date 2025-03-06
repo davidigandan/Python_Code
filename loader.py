@@ -72,7 +72,7 @@ def load(filename):
     for name,value in zip(names,vals.T):
         main[name] = value
     
-    print(main)
+    
     # Convert to class instance
     d = dict2obj(main, order=names)
     d.metadata = dict2obj(meta)

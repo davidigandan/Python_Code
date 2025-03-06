@@ -37,12 +37,16 @@ xzyz = [0,0,0,0]
 aa = [0,0,0,0]
 imtemplate=str(scannum)+'-camlab84-files/%05d.tif'# cam1
 imtemplate2=str(scannum)+'-camlab84b-files/%05d.tif'# cam1
-for scannum in list(range(599,599+30,1)):
+for scannum in list(range(599,600+30,1)):
     d = do.load(scanpath + str(scannum) + '.dat')
     centres = np.array([[]]*17).T
+    
     for imnum in d.path[list(range(0,d.path.shape[0],1))]:
         imnum = int(imnum)
+
         rpos = [d.rchi[imnum-1],	d.rx[imnum-1],	d.ry[imnum-1],	d.rz[imnum-1],	d.ralpha[imnum-1],	d.rbeta[imnum-1], d.rgamma[imnum-1], d.rm1[imnum-1],	d.rm2[imnum-1],	d.rm3[imnum-1],	d.rm4[imnum-1],	d.rm5[imnum-1],	d.rm6[imnum-1]]
+        # what is the role of rpos? why does it need an ralpha?
+        
         # im_array += imageio.imread(str(scanpath + str(imtemplate % imnum)))
         im = imageio.imread(str(scanpath + str(imtemplate % imnum)))
         plt.title(str(scannum))
