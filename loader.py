@@ -76,4 +76,5 @@ def load(filename):
     # Convert to class instance
     d = dict2obj(main, order=names)
     d.metadata = dict2obj(meta)
+    
     return d
