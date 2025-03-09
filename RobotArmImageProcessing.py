@@ -45,7 +45,7 @@ for scannum in list(range(599,600+30,1)):
         imnum = int(imnum)
         
 
-        rpos = [d.rchi[imnum-1],	d.rx[imnum-1],	d.ry[imnum-1],	d.rz[imnum-1],	d.ralpha[imnum-1],	d.rbeta[imnum-1], d.rgamma[imnum-1], d.rm1[imnum-1],	d.rm2[imnum-1],	d.rm3[imnum-1],	d.rm4[imnum-1],	d.rm5[imnum-1],	d.rm6[imnum-1]]
+        rpos = [d.rx[imnum-1],	d.ry[imnum-1],	d.rz[imnum-1]	]
         # what is the role of rpos? why does it need an ralpha?
         
         # im_array += imageio.imread(str(scanpath + str(imtemplate % imnum)))
